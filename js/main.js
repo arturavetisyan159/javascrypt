@@ -85,4 +85,21 @@
 
 //     return iter(3, n);
 // }
-// console.log(minDiv(25)); 
+// console.log(minDiv(25));
+
+const someFunction = (n) => {
+    n = String(n);
+    let result = null;
+    while (n.length > -1) {
+        if (n.length > 1){
+            n = Number(n[0]) + Number(n[1]);
+            n = String(n)
+        } else if (n.length == 1) {
+            result = n;
+            break;
+        }
+    }
+    return Number(result)  
+};
+
+console.log(someFunction(10));
