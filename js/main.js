@@ -87,19 +87,65 @@
 // }
 // console.log(minDiv(25));
 
-const someFunction = (n) => {
-    n = String(n);
-    let result = null;
-    while (n.length > -1) {
-        if (n.length > 1){
-            n = Number(n[0]) + Number(n[1]);
-            n = String(n)
-        } else if (n.length == 1) {
-            result = n;
-            break;
-        }
-    }
-    return Number(result)  
-};
+// const someFunction = (n) => {
+//     n = String(n);
+//     let result = null;
+//     while (n.length > -1) {
+//         if (n.length > 1){
+//             n = Number(n[0]) + Number(n[1]);
+//             n = String(n)
+//         } else if (n.length == 1) {
+//             result = n;
+//             break;
+//         }
+//     }
+//     return Number(result)  
+// };
 
-console.log(someFunction(10));
+// console.log(someFunction(65));
+
+// напишите функцию если число является простым или нет.
+// const isSimple = n => {
+//     if (n === 1){
+//         return true;
+//     }
+//     let result = null;
+//     for (let i = 2; i <= n; i++){
+//         if (n % i === 0 && i != n){
+//             result = false;
+//             return result;
+//         }
+//         else if (n % 1 === 0 && i == n){
+//             result = true;
+//         }
+//     }
+//     return result;
+// }
+
+// console.log(isSimple(2));
+
+// написать функцию, которая выводит в терминал числа в диапазоне от begin to end
+// 1) если число делится без остатка на 5, то вместо него пишется слово Fizz
+// 2) если число делится без остатка на 5, то вместо него пишется слово Buzz
+// 3) елси число делится и на 3 и на 5, то вместо него пишется слово FizzBuzz
+// 4) в остальном только само число.
+
+// const fizzBuzz = (begin, end) => {
+//     let result = '';
+//     for(begin; begin <= end; begin++){
+//         if (begin % 3 == 0 && begin % 5 != 0){
+//             result = result + 'Fzizz';
+//         }
+//         else if (begin % 5 == 0 && begin % 3 != 0){
+//             result = result + 'Buzz';
+//         }
+//         else if (begin % 3 == 0 && begin % 5 == 0){
+//             result = result + 'FizzBuzz';
+//         }
+//         else{
+//             result = result + begin;
+//         }
+//     }
+//     return result;
+// }
+// console.log(fizzBuzz(1, 10))
