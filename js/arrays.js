@@ -1,3 +1,4 @@
+'use strict';
 // МАССИВЫ
 // const items = [];
 // const animals = ['cats', 'dogs', 'birds'];
@@ -184,3 +185,4 @@
 // const parts = ['JS', 'Python', 'Parts'];
 // const output = parts.join(', '); // JS, Python, Parts
 // console.log(output);
+
