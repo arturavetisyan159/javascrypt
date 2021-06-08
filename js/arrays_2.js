@@ -90,7 +90,33 @@
 // console.log(fruits);
 
 // rest-оператор при деструктуризации строк
-const [first, second, ...rest] = 'some string';
-console.log(first); // 's'
-console.log(second); // 'o'
-console.log(rest); // после применения rest мы записали в rest массив строк
+// const [first, second, ...rest] = 'some string'; // оператор слева от знака =, где происходит деструктуризация
+// console.log(first); // 's'
+// console.log(second); // 'o'
+// console.log(rest); // после применения rest мы записали в rest массив строк
+
+// spread- оператор. Он не сворачивает элементы, а растягивает их (с его помошью копируют или сливают массивы) (может появляться в любой части массива)
+// const russianCities = ['moscow', 'kazan'];
+// const cities = ['milan', 'rome', ...russianCities]; // опреатор справа от знака =, где массив формируется
+
+// console.log(russianCities);
+// console.log(cities);
+
+// const cities = ['milan', 'paris'].concat(russianCities);
+// console.log(cities);
+
+// const russianCities = ['moscow', 'kazan'];
+// const ukranianCities = ['kiev', 'odessa'];
+// const cities = [...russianCities, ...ukranianCities];
+// console.log(cities); // ['moscow', 'kazan', 'kiev', 'odessa']
+
+// const russianCities = ['moscow', 'kazan'];
+// const copy = [...russianCities];
+// copy.push('samara'); // ['moscow', 'kazan', 'samara']
+
+// то же самое без spread оператора методом slice
+// const russianCities = ['moscow', 'kazan'];
+// const copy = russianCities.slice();
+// copy.push('samara');
+// console.log(copy);
+
