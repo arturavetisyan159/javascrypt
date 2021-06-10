@@ -153,7 +153,38 @@
 // console.log(copyOfUser);
 
 //расширение нового объекта с новыми данными
-const user = {name: 'vasya', age: 11};
+// const user = {name: 'Vasya', age: 11};
+// const user2 = {name: 'Irina', surname: 'Petrova'};
+// const mergedObject = {...user, ...user2};
 
-const newUser = {...user, married: true, age: 28}; // все, что находится справа от spread имеет приоритет при слиянии. Все что слева- имеет низкиий приоритет.
-console.log(newUser);
+// const newUser = {...user, married: true, age: 28}; // все, что находится справа от spread имеет приоритет при слиянии. Все что слева- имеет низкиий приоритет.
+// console.log(newUser);
+
+// console.log(mergedObject);
+
+// const newUser ={...user, married: true, ...user2};
+// console.log(newUser);
+
+
+
+// Деструктуризация с вложенными объектами
+// есть такая структура user.company.name
+
+// перепишем на более понятный код с помощью констант
+// const company = user.company;
+// тогда вот это user.company.name будет равно вот этому company.name
+
+// const person = {firstName: 'Rasmus', lastName: 'Lerdorf', manager: true,};
+
+// const {firstName, manager} = person;
+// console.log(firstName); // 'Rasmus'
+// console.log(manager); // 'true'
+
+// const person = {firstName: 'Rasmus', lastName: 'Lerdorf',};
+// const {manager = false} = person;
+// console.log(manager);// false
+
+// ...rest
+const newUser = {name: 'Artur', married: true, age: 28};
+const {name, ...rest} = newUser; // { married: true, age: 28 }
+console.log(rest);
