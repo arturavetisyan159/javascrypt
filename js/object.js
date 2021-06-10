@@ -1,3 +1,4 @@
+'use strict';
 // ОБЪЕКТЫ - тип данных, с помощью которого представляют связанный тип данных.
 
 // const user = {
@@ -61,3 +62,98 @@
 
 // const copyOfCompany = company;
 // console.log(copyOfCompany === company); // true (т.к ссылка на один и тот же объект)
+
+// hasOwnProperty();
+
+// Обдход свойств объекта
+
+// const course = {name: 'Javascript', slug: 'js-vanilla'};
+// for (const prop in course){
+//     console.log(`course.${prop} = ${course[prop]}`); // for...in выводит свойства не только самого объекта, но и свойства, добавленные в прототип объекта (объекты могут быть связаны друг с другом, и обращение к свойству в одном объектае может приводить к обращению в другом)
+// }
+
+// более распространенный способ Object.keys(obj)- позволяет получить массив всех ключей объекта
+// const course = {name: 'Javascript', slug: 'js-vanilla'};
+// const keys = Object.keys(course); 
+// console.log(keys); 
+
+// for (const key of keys){
+//     console.log(course[key]);
+// }
+
+// если ключи в процессе обхода то можно сразу полуить массив значений обьекта. 
+// const course = {name: 'Javascript', slug: 'js-vanilla'};
+// const values = Object.values(course); // есть метод Object.values(obj)
+// console.log(values); 
+
+// for (const value of values){
+//     console.log(value);
+// }
+
+// возврат ключей и значений объекта (Object.entries(obj)) // [key, value]
+// const course = {name: 'Javascript', slug: 'js-vanilla'};
+
+// const entries = Object.entries(course);
+// console.log(entries) // [ [name, Javascript], [slug, js-vanilla] ]
+
+// for (const [key, value] of entries){
+//     console.log(`${key} - ключ`);
+//     console.log(`${value} - значение`);
+// }
+
+// надо реализовать функцию, которая возвращает список ключей объекта, значение которых равно переданному значению.
+// const lessonMembers = {
+//     syntax: 3,
+//     using: 2, 
+//     foreach: 10, 
+//     operations: 10,
+//     destructing: 2,
+//     array: 2,
+// }
+
+// const findKeys = (obj, value) => {
+//     let result = [];
+//     const entries = Object.entries(obj);
+//     for (const [key, val] of entries){
+//         if (val === value){
+//             result.push(key);
+//         } else {
+//             continue
+//         }
+//     }
+//     return result;
+// }
+
+// console.log(findKeys(lessonMembers, 3));
+
+// Слияние (merge) - операция над объектами, выполняет объединение. 
+// const user = {
+//     name : 'Tirion',
+//     email: 'support@yandex.ru',
+//     age: 44,
+// };
+// const data = {name:'Tirion2', age: 46,}
+
+// для слияния воспользуемся методом Object.assign
+// Object.assign(user, data);
+// console.log(user);
+
+// const user = {
+//     name : 'Tirion',
+//     email: 'support@yandex.ru',
+//     age: 44,
+// };
+
+// const data = {name:'Tirion2', age: 46,};
+// const copyOfUser = Object.assign({}, user, data);
+// console.log(copyOfUser);
+
+// поверхностное копирование с помощью спреда
+// const copyOfUser = {...user};
+// console.log(copyOfUser);
+
+//расширение нового объекта с новыми данными
+const user = {name: 'vasya', age: 11};
+
+const newUser = {...user, married: true, age: 28}; // все, что находится справа от spread имеет приоритет при слиянии. Все что слева- имеет низкиий приоритет.
+console.log(newUser);
